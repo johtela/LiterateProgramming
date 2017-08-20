@@ -53,7 +53,7 @@ namespace DefaultTheme
             
             #line default
             #line hidden
-            this.Write("images/favicon.ico\">\r\n    ");
+            this.Write("Images/favicon.ico\">\r\n    ");
             this.Write("\n");
             this.Write("\n");
             this.Write("\n");

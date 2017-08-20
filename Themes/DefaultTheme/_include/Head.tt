@@ -9,6 +9,6 @@
 
     <title><#= Params.Filename + " - " + Params["projectname"] #></title>
 
-	<link rel="icon" type="image/x-icon" href="<#= Params.Root #>images/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="<#= Params.Root #>Images/favicon.ico">
     <#@ include file="styles.tt" #>
 </head>
