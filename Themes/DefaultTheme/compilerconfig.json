@@ -1,0 +1,38 @@
+﻿[
+  {
+    "outputFile": "bootstrap/css/bootstrap.css",
+    "inputFile": "bootstrap/less/bootstrap.less"
+  },
+  {
+    "outputFile": "sidebar/sidebar.css",
+    "inputFile": "sidebar/sidebar.less"
+  },
+  {
+    "outputFile": "syntax-highlight/monokai.css",
+    "inputFile": "syntax-highlight/monokai.less"
+  },
+  {
+    "outputFile": "syntax-highlight/son-of-obsidian.css",
+    "inputFile": "syntax-highlight/son-of-obsidian.less"
+  },
+  {
+    "outputFile": "syntax-highlight/coding-horror.css",
+    "inputFile": "syntax-highlight/coding-horror.less"
+  },
+  {
+    "outputFile": "syntax-highlight/solarized-light.css",
+    "inputFile": "syntax-highlight/solarized-light.less"
+  },
+  {
+    "outputFile": "css/modern.css",
+    "inputFile": "css/modern.less"
+  },
+  {
+    "outputFile": "css/plain.css",
+    "inputFile": "css/plain.less"
+  },
+  {
+    "outputFile": "css/book.css",
+    "inputFile": "css/book.less"
+  }
+]

@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSWeave", "CSWeave.csproj", "{41065B2E-C226-4B29-9E92-22E92C611F9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSWeave.Theme", "CSWeave.Theme\CSWeave.Theme.csproj", "{0E9474F8-0265-4EFF-9522-A667D192A1FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{C9175C7D-2CB9-41E5-B2A6-F4FF3C7B9900}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultTheme", "Themes\DefaultTheme\DefaultTheme.csproj", "{4B3B24F6-64C4-4309-99FA-64A05F428FAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{712EEF06-02E4-4DEC-B201-FCF0E0E8F4DD}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "Deployment", "Deployment\Deployment.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41065B2E-C226-4B29-9E92-22E92C611F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41065B2E-C226-4B29-9E92-22E92C611F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41065B2E-C226-4B29-9E92-22E92C611F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41065B2E-C226-4B29-9E92-22E92C611F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E9474F8-0265-4EFF-9522-A667D192A1FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E9474F8-0265-4EFF-9522-A667D192A1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E9474F8-0265-4EFF-9522-A667D192A1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E9474F8-0265-4EFF-9522-A667D192A1FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B3B24F6-64C4-4309-99FA-64A05F428FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B3B24F6-64C4-4309-99FA-64A05F428FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B3B24F6-64C4-4309-99FA-64A05F428FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B3B24F6-64C4-4309-99FA-64A05F428FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4B3B24F6-64C4-4309-99FA-64A05F428FAB} = {C9175C7D-2CB9-41E5-B2A6-F4FF3C7B9900}
+	EndGlobalSection
+EndGlobal

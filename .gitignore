@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/bin
+/obj
+/LiterateProgramming.csproj.user
+/packages
+/Docs/*
+!/Docs/Images
+/CSWeave.Theme/bin
+/CSWeave.Theme/obj
+/Themes/DefaultTheme/bin
+/Themes/DefaultTheme/obj
+*.swp
+*.zip

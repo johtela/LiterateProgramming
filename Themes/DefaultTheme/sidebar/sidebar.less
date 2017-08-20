@@ -1,0 +1,32 @@
+@import (reference) "../bootstrap/less/variables.less";
+@import (reference) "../bootstrap/less/mixins/border-radius.less";
+
+.main-menu {
+    ul {
+        list-style-type: none;
+	    padding: 0px;
+        ul {
+            font-size: 0.98em;
+	        padding-left: 10px;
+        }
+    }
+    li a {
+        padding-bottom: 3px;
+        padding-top: 3px;
+        display: block;
+        color: @link-hover-color;
+        text-decoration: none;
+        .border-top-radius(@list-group-border-radius);
+        .border-bottom-radius(@list-group-border-radius);
+        &:hover, &.selected {
+        	padding-left: 5px;
+            background-color: @link-hover-color;
+            color: @body-bg;
+        }
+        &:active {
+        	padding-left: 5px;
+            background-color: @link-color;
+            color: @body-bg;
+        }
+    }
+}
