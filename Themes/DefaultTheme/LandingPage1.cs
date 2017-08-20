@@ -18,7 +18,7 @@ namespace DefaultTheme
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\LandingPage.tt"
+    #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\LandingPage.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class LandingPage : LandingPageBase
     {
@@ -41,39 +41,39 @@ namespace DefaultTheme
                     "=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale" +
                     "=1\">\n\n    <title>");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/LandingHead.tt"
+            #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/LandingHead.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params["projectname"]));
             
             #line default
             #line hidden
             this.Write("</title>\n\n\t<link rel=\"icon\" type=\"image/x-icon\" href=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/LandingHead.tt"
+            #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/LandingHead.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.Root));
             
             #line default
             #line hidden
-            this.Write("images/favicon.ico\">\n    ");
+            this.Write("images/favicon.ico\">\r\n    ");
             this.Write("\n");
             this.Write("\n");
             this.Write("\n");
             this.Write("\n<link rel=\"stylesheet\" href=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include\LandingStyles.tt"
+            #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include\LandingStyles.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.Root));
             
             #line default
             #line hidden
             this.Write("bootstrap/css/bootstrap.min.css\" />\n<link rel=\"stylesheet\" href=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include\LandingStyles.tt"
+            #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include\LandingStyles.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.Root));
             
             #line default
             #line hidden
             this.Write("font-awesome/css/font-awesome.min.css\">\n<link rel=\"stylesheet\" href=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include\LandingStyles.tt"
+            #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include\LandingStyles.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.Root));
             
             #line default
@@ -81,11 +81,7 @@ namespace DefaultTheme
             this.Write("css/landingpage.css\" />\n");
             this.Write("\n</head>");
             this.Write("\n\n<body>\n    ");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
             this.Write(@"
-
     <nav class=""navbar navbar-inverse"">
         <div class=""container-fluid"">
             <div class=""navbar-header"">
@@ -97,64 +93,64 @@ namespace DefaultTheme
                 </button>
                 <a class=""navbar-brand"" href=""");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
+            #line 15 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.Root));
             
             #line default
             #line hidden
             this.Write("Index.html\">");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
+            #line 15 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params["projectname"]));
             
             #line default
             #line hidden
-            this.Write("</a>\n            </div>\n            <div id=\"navbar\" class=\"navbar-collapse colla" +
-                    "pse\">\n                <ul class=\"nav navbar-nav\">\n                    <li><a hre" +
-                    "f=\"");
+            this.Write("</a>\r\n            </div>\r\n            <div id=\"navbar\" class=\"navbar-collapse col" +
+                    "lapse\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li><a" +
+                    " href=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
+            #line 19 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.Root));
             
             #line default
             #line hidden
-            this.Write("Index.html\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Home</a></li>\n         " +
-                    "           <li><a href=\"");
+            this.Write("Index.html\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Home</a></li>\r\n        " +
+                    "            <li><a href=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
+            #line 20 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params["github"]));
             
             #line default
             #line hidden
-            this.Write("\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> GitHub Repository</a></li>\n    " +
-                    "                <li><a href=\"");
+            this.Write("\"><i class=\"fa fa-github\" aria-hidden=\"true\"></i> GitHub Repository</a></li>\r\n   " +
+                    "                 <li><a href=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
+            #line 21 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params["download"]));
             
             #line default
             #line hidden
-            this.Write("\"><i class=\"fa fa-download\" aria-hidden=\"true\"></i> Download</a></li>\n           " +
-                    "         <li><a href=\"");
+            this.Write("\"><i class=\"fa fa-download\" aria-hidden=\"true\"></i> Download</a></li>\r\n          " +
+                    "          <li><a href=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
+            #line 22 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.Root));
             
             #line default
             #line hidden
-            this.Write("License.html\">License</a></li>\n                </ul>\n            </div>\n        <" +
-                    "/div>\n    </nav>");
+            this.Write("License.html\">License</a></li>\r\n                </ul>\r\n            </div>\r\n      " +
+                    "  </div>\r\n    </nav>");
             this.Write("\n\n    <!-- Main jumbotron for a primary marketing message or call to action -->\n " +
                     "   <div class=\"jumbotron\">\n      <div class=\"container\">\n        ");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\LandingPage.tt"
+            #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\LandingPage.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params["_jumbotron"]));
             
             #line default
             #line hidden
             this.Write("\n        <p><a class=\"btn btn-primary btn-lg\" href=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\LandingPage.tt"
+            #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\LandingPage.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.SectionPath (Params.Toc.NextSection (Params.CurrentSection))));
             
             #line default
@@ -162,7 +158,7 @@ namespace DefaultTheme
             this.Write("\" role=\"button\">Learn more &raquo;</a></p>\n      </div>\n    </div>\n\n    <div clas" +
                     "s=\"container\">\n\t\t");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\LandingPage.tt"
+            #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\LandingPage.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.Contents));
             
             #line default
@@ -170,7 +166,7 @@ namespace DefaultTheme
             this.Write("\n\t</div>\n\n    ");
             this.Write("\r\n    <footer class=\"panel-footer text-center\">\r\n        <p>");
             
-            #line 7 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/Footer.tt"
+            #line 7 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/Footer.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params["footer"]));
             
             #line default
@@ -182,14 +178,14 @@ namespace DefaultTheme
             this.Write("\n");
             this.Write("\n\n    <script src=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/LandingScripts.tt"
+            #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/LandingScripts.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.Root));
             
             #line default
             #line hidden
             this.Write("bootstrap/js/jquery.min.js\"></script>\n    <script src=\"");
             
-            #line 1 "C:\Users\johteto\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/LandingScripts.tt"
+            #line 1 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/LandingScripts.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params.Root));
             
             #line default

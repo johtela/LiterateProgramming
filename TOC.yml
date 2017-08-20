@@ -1,6 +1,6 @@
 ﻿contents:
   - page: Home
-    file: Index.md
+    file: index.md
     desc: Literate programming home page.
 
   - page: Introduction
