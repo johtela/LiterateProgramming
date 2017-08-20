@@ -7,8 +7,6 @@
 /obj
 /LiterateProgramming.csproj.user
 /packages
-/Docs/*
-!/Docs/Images
 /CSWeave.Theme/bin
 /CSWeave.Theme/obj
 /Themes/DefaultTheme/bin

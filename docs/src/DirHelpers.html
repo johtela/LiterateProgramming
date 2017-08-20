@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DirHelpers - Literate Programming</title>
+
+    
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../sidebar/sidebar.min.css" />
+    <link rel="stylesheet" href="../css/markdown.css" />
+    <!--<link rel="stylesheet" href="prism/prism.css" />-->
+    <link rel="stylesheet" href="../syntax-highlight/syntax-dark.css" />
+
+</head>
+
+
+<body>
+    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="Index.html">Literate Programming</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="../Index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="https://github.com/johtela/LiterateProgramming"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
+                    <li><a href="../License.html">License</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 hidden-xs hidden-sm">
+                
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>On This Page</h4>
+            </div>
+            <div id="header-menu" class="panel-body main-menu">
+                <ul></ul>
+            </div>
+        </div>  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Table of Contents</h4>
+            </div>
+            <div class="panel-body main-menu">
+                <ul>
+<li><a href="src/Index.html">Introduction</a>
+<ul>
+<li>Introduction to literate programming and to the <code>csweave</code> tool.</li>
+</ul>
+</li>
+<li><a href="src/Options.html">Command Line Options</a>
+<ul>
+<li>Lists the available command line options and input parameters.</li>
+</ul>
+</li>
+<li><a href="src/Program.html">Main Program</a>
+<ul>
+<li>Main program that initiates the document generation.</li>
+</ul>
+</li>
+<li><a href="src/BlockList.html">Source blocks</a>
+<ul>
+<li>Data structure that splits a source file into comments and code.</li>
+</ul>
+</li>
+<li><a href="src/BlockBuilder.html">Block builder</a>
+<ul>
+<li>C# syntax tree walker that will create a block list from a source file.</li>
+</ul>
+</li>
+<li><a href="src/Weaver.html">Document weaver</a>
+<ul>
+<li>Weaver reads the source files and outputs documents based on options.</li>
+</ul>
+</li>
+<li><a href="src/HtmlGenerator.html">HTML Generation</a>
+<ul>
+<li>Markdown to HTML generation and template processing.</li>
+</ul>
+</li>
+<li><a href="src/DirHelpers.html">Directory Utilities</a>
+<ul>
+<li>Functions that help file/directory management.</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+
+            </div>
+            <div id="static-content" class="col-md-9 markdown">
+                <pre class="csharp"><code class="csharp"><span class="keyword">namespace</span> LiterateProgramming
+<span class="punctuation">{</span>
+	<span class="keyword">using</span> System<span class="punctuation">;</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>IO<span class="punctuation">;</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>Linq<span class="punctuation">;</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>Text<span class="punctuation">.</span>RegularExpressions<span class="punctuation">;</span>
+
+	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> DirHelpers
+	<span class="punctuation">{</span>
+		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> CopySubDirectories <span class="punctuation">(</span><span class="keyword">string</span> inputRoot<span class="punctuation">,</span> <span class="keyword">string</span> outputRoot<span class="punctuation">,</span> <span class="keyword">string</span> filter<span class="punctuation">,</span>
+			<span class="keyword">bool</span> recurse<span class="punctuation">,</span> Func<span class="punctuation">&lt;</span><span class="keyword">string</span><span class="punctuation">,</span> <span class="keyword">bool</span><span class="punctuation">&gt;</span> predicate<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword">foreach</span> <span class="punctuation">(</span><span class="keyword">string</span> subDir <span class="keyword">in</span> Directory<span class="punctuation">.</span>GetDirectories <span class="punctuation">(</span>inputRoot<span class="punctuation">,</span> filter<span class="punctuation">,</span>
+				GetSearchOption <span class="punctuation">(</span>recurse<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">.</span>Where <span class="punctuation">(</span>predicate<span class="punctuation">)</span><span class="punctuation">)</span>
+				EnsureExists <span class="punctuation">(</span>subDir<span class="punctuation">.</span>Replace <span class="punctuation">(</span>inputRoot<span class="punctuation">,</span> outputRoot<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+
+		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> CopySubDirectories <span class="punctuation">(</span><span class="keyword">string</span> inputRoot<span class="punctuation">,</span> <span class="keyword">string</span> outputRoot<span class="punctuation">,</span> <span class="keyword">string</span> filter<span class="punctuation">,</span>
+			<span class="keyword">bool</span> recurse<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			CopySubDirectories <span class="punctuation">(</span>inputRoot<span class="punctuation">,</span> outputRoot<span class="punctuation">,</span> filter<span class="punctuation">,</span> recurse<span class="punctuation">,</span> _ <span class="punctuation">=&gt;</span> <span class="keyword">true</span><span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+
+		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> EnsureExists <span class="punctuation">(</span><span class="keyword">string</span> dir<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span class="keyword">if</span> <span class="punctuation">(</span><span class="punctuation">!</span>Directory<span class="punctuation">.</span>Exists <span class="punctuation">(</span>dir<span class="punctuation">)</span><span class="punctuation">)</span>
+				Directory<span class="punctuation">.</span>CreateDirectory <span class="punctuation">(</span>dir<span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+
+		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">string</span> WildcardToRegex <span class="punctuation">(</span><span class="keyword">string</span> pattern<span class="punctuation">)</span> <span class="punctuation">=&gt;</span>
+			<span class="string">&quot;^&quot;</span> <span class="punctuation">+</span> Regex<span class="punctuation">.</span>Escape <span class="punctuation">(</span>pattern<span class="punctuation">)</span>
+					<span class="punctuation">.</span>Replace <span class="punctuation">(</span><span class="string">@&quot;\*\*&quot;</span><span class="punctuation">,</span> <span class="string">&quot;.*&quot;</span><span class="punctuation">)</span>
+					<span class="punctuation">.</span>Replace <span class="punctuation">(</span><span class="string">@&quot;\*&quot;</span><span class="punctuation">,</span> <span class="string">&quot;[^\\\\/]*&quot;</span><span class="punctuation">)</span>
+					<span class="punctuation">.</span>Replace <span class="punctuation">(</span><span class="string">@&quot;\?&quot;</span><span class="punctuation">,</span> <span class="string">&quot;.&quot;</span><span class="punctuation">)</span>
+				  <span class="punctuation">+</span> <span class="string">&quot;$&quot;</span><span class="punctuation">;</span>
+
+		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">string</span> PathWithBackslash <span class="punctuation">(</span><span class="keyword">string</span> dirPath<span class="punctuation">)</span> <span class="punctuation">=&gt;</span>
+			dirPath<span class="punctuation">[</span>dirPath<span class="punctuation">.</span>Length <span class="punctuation">-</span> <span class="number">1</span><span class="punctuation">]</span> <span class="punctuation">!=</span> Path<span class="punctuation">.</span>DirectorySeparatorChar <span class="punctuation">?</span>
+				dirPath <span class="punctuation">+</span> Path<span class="punctuation">.</span>DirectorySeparatorChar <span class="punctuation">:</span> dirPath<span class="punctuation">;</span>
+
+		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">string</span><span class="punctuation">[</span><span class="punctuation">]</span> Dir <span class="punctuation">(</span><span class="keyword">string</span> path<span class="punctuation">,</span> <span class="keyword">string</span> filter<span class="punctuation">,</span> <span class="keyword">bool</span> recurse<span class="punctuation">)</span> <span class="punctuation">=&gt;</span>
+				Directory<span class="punctuation">.</span>GetFiles <span class="punctuation">(</span>path<span class="punctuation">,</span> filter<span class="punctuation">,</span> GetSearchOption <span class="punctuation">(</span>recurse<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">;</span>
+
+		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> Copy <span class="punctuation">(</span><span class="keyword">string</span> file<span class="punctuation">,</span> <span class="keyword">string</span> targetFolder<span class="punctuation">,</span> <span class="keyword">bool</span> overwrite<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			File<span class="punctuation">.</span>Copy <span class="punctuation">(</span>file<span class="punctuation">,</span> Path<span class="punctuation">.</span>Combine <span class="punctuation">(</span>targetFolder<span class="punctuation">,</span> Path<span class="punctuation">.</span>GetFileName <span class="punctuation">(</span>file<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">,</span> overwrite<span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+
+		<span class="keyword">public</span> <span class="keyword">static</span> SearchOption GetSearchOption <span class="punctuation">(</span><span class="keyword">bool</span> recurse<span class="punctuation">)</span> <span class="punctuation">=&gt;</span>
+			recurse <span class="punctuation">?</span>
+				SearchOption<span class="punctuation">.</span>AllDirectories <span class="punctuation">:</span>
+				SearchOption<span class="punctuation">.</span>TopDirectoryOnly<span class="punctuation">;</span>
+	<span class="punctuation">}</span>
+<span class="punctuation">}</span>
+</code></pre>
+
+            </div>
+        </div>
+    </div>
+    
+    <footer class="panel-footer text-center">
+        <p>Copyright (c) 2017 Tommi Johtela</p>
+    </footer>
+
+
+    
+    <script src="../bootstrap/js/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../sidebar/sidebar.js"></script>
+    <!--<script src='prism/prism.js'></script>-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        extensions: ["jsMath2jax.js"]
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'></script>
+
+</body>
+</html>

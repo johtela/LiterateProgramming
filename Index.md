@@ -2,7 +2,7 @@
 Template: landing
 ProjectName: Literate Programming
 GitHub: https://github.com/johtela/LiterateProgramming
-Download: https://github.com/johtela/LiterateProgramming
+Download: https://github.com/johtela/LiterateProgramming/releases
 Footer: "Copyright © 2017 Tommi Johtela"
 ShowDescriptionsInToc: true
 MarkdownStyle: book
@@ -80,6 +80,6 @@ Go to the releases page to download the latest version. You can also clone the
 [repository](https://github.com/johtela/LiterateProgramming) and build the tool
 from the sources.
 
-<a class="btn btn-default" href="src/BlockBuilder.html" role="button">Download &raquo;</a>
+<a class="btn btn-default" href="https://github.com/johtela/LiterateProgramming/releases" role="button">Download &raquo;</a>
 :::
 ::::::

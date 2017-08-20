@@ -16,7 +16,8 @@ is and how the `csweave` tool helps you practicing it.
 
 ## Installation
 
-Download the latest version of the `csweave` tool from: ...
+Download the latest version of the `csweave` tool from the 
+[releases page](https://github.com/johtela/LiterateProgramming/releases).
 
 The software is provided as a zip package that contains everything inside a
 single folder. Just extract the package to any directory. Typically the 

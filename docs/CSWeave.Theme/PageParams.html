@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PageParams - Literate Programming</title>
+
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    
+
+
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../sidebar/sidebar.min.css" />
+<link rel="stylesheet" href="../css/book.min.css" />
+<link rel="stylesheet" href="../syntax-highlight/solarized-light.min.css" />
+<link rel="stylesheet" href="../mermaid/mermaid.css" />
+
+</head>
+
+<body>
+    
+
+
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../Index.html">Literate Programming</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="../Index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="https://github.com/johtela/LiterateProgramming"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repository</a></li>
+                    <li><a href="https://github.com/johtela/LiterateProgramming/releases"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
+                    <li><a href="../License.html">License</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 hidden-xs hidden-sm">
+                
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>On This Page</h4>
+            </div>
+            <div id="header-menu" class="panel-body main-menu">
+                <ul></ul>
+            </div>
+        </div>  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Table of Contents</h4>
+            </div>
+            <div class="panel-body main-menu">
+                <ul>
+	<li><a href="../Index.html">Home</a></li>
+	<ul>
+		<li>Literate programming home page.</li>
+	</ul>
+	<li><a href="../Introduction.html">Introduction</a></li>
+	<ul>
+		<li>Introduction to literate programming and to the <code>csweave</code> tool.</li>
+	</ul>
+	<li><a href="../src\Options.html">Command Line Options</a></li>
+	<ul>
+		<li>Lists the available command line options and input parameters.</li>
+	</ul>
+	<li><a href="../src\Program.html">Main Program</a></li>
+	<ul>
+		<li>Main program that initiates the document generation.</li>
+	</ul>
+	<li><a href="../src\SplitPath.html">SplitPath Structure</a></li>
+	<ul>
+		<li>Helper data structure that makes working with file and directory paths easier.</li>
+	</ul>
+	<li><a href="../src\Weaver.html">Document Weaver</a></li>
+	<ul>
+		<li>Weaver reads the source files and outputs documents based on options.</li>
+	</ul>
+	<li><a href="../src\MdWeaver.html">Markdown Weaver</a></li>
+	<ul>
+		<li>Weaver subclass that outputs Markdown as output.</li>
+	</ul>
+	<li><a href="../src\HtmlWeaver.html">HTML Weaver</a></li>
+	<ul>
+		<li>Weaver subclass that outputs HTML as output.</li>
+	</ul>
+	<li><a href="../src\TocManager.html">TOC Manager</a></li>
+	<ul>
+		<li>Loads, saves and updates table of contents.</li>
+	</ul>
+	<li><a href="../src\MSBuildHelpers.html">MSBuild Helpers</a></li>
+	<ul>
+		<li>Helper methods for working with MSBuild projects.</li>
+	</ul>
+	<li><a href="../src\BlockList.html">Source Blocks</a></li>
+	<ul>
+		<li>Data structure that splits a source file into comments and code.</li>
+	</ul>
+	<li><a href="../src\BlockBuilder.html">Block Builder</a></li>
+	<ul>
+		<li>C# syntax tree walker that will create a block list from a source file.</li>
+	</ul>
+	<li><a href="../src\HtmlBlockBuilder.html">HTML Block Builder</a></li>
+	<ul>
+		<li>Subclass of block builder that enriches code blocks in HTML output.</li>
+	</ul>
+	<li><a href="../src\HtmlGenerator.html">HTML Generation</a></li>
+	<ul>
+		<li>Markdown to HTML generation and template processing.</li>
+	</ul>
+	<li>Themes</li>
+	<ul>
+		<li>Customizing the HTML output.</li>
+<ul>
+	<li><a href="../CSWeave.Theme\DirHelpers.html">Directory Utilities</a></li>
+	<ul>
+		<li>Functions that help file/directory management.</li>
+	</ul>
+	<li><a href="../CSWeave.Theme\Toc.html">Table of Contents Classes</a></li>
+	<ul>
+		<li>Data structure representing the table of contents.</li>
+	</ul>
+	<li><a href="../CSWeave.Theme\PageParams.html" class="selected">Page Parameters</a></li>
+	<ul>
+		<li>Parameters available for a theme when it is rendering a page.</li>
+	</ul>
+	<li><a href="../CSWeave.Theme\Theme.html">Theme Base Class</a></li>
+	<ul>
+		<li>Base class for themes to inherit from.</li>
+	</ul>
+</ul>
+	</ul>
+	<li><a href="../FrontMatter.html">Front Matter</a></li>
+	<ul>
+		<li>Defining document metadata.</li>
+	</ul>
+	<li><a href="../TableOfContents.html">Table of Contents File</a></li>
+	<ul>
+		<li>Description of the TOC file format.</li>
+	</ul>
+	<li><a href="../TipsAndTricks.html">Tips &amp; Tricks</a></li>
+	<ul>
+		<li>How to configure the tool to improve your workflow.</li>
+	</ul>
+	<li><a href="../License.html">License</a></li>
+	<ul>
+		<li>Program license and terms of use.</li>
+	</ul>
+</ul>
+            </div>
+        </div>
+
+            </div>
+			<div class="col-md-9">
+				<ul class="pager">
+	<li class="previous"><a href="../CSWeave.Theme\Toc.html">Previous: Table of Contents Classes</a></li>
+	<li class="next"><a href="../CSWeave.Theme\Theme.html">Next: Theme Base Class</a></li>
+</ul>
+
+				<div id="static-content" class="markdown">
+					<h1 id="page-parameters">Page Parameters</h1>
+<p>All the data <code>csweave</code> will pass to the theme is contained inside a
+PageParams object. This class defines the built-in parameters that are
+always available, and the custom parameters specified in front matter.</p>
+<pre class="csharp"><code class="csharp"><span class="keyword" id="CSWeave.Theme">namespace</span> CSWeave<span class="punctuation">.</span>Theme
+<span class="punctuation">{</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>Collections<span class="punctuation">.</span>Generic<span class="punctuation">;</span>
+	<span class="keyword">using</span> System<span class="punctuation">.</span>IO<span class="punctuation">;</span>
+
+	<span class="keyword" id="CSWeave.Theme.PageParams">public</span> <span class="keyword">class</span> <span class="typename">PageParams</span>
+	<span class="punctuation">{</span>
+</code></pre>
+<h2 id="custom-parameters">Custom Parameters</h2>
+<p>You can specify any parameters inside front matter. How these will
+be used is up to the theme. The parameters are simple key-value pairs
+with string both as the key and value type. The parameters are stored
+in a dictionary that is initialized when a PageParams object is created.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword">private</span> <span class="typename" data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>">Dictionary</span><span class="punctuation">&lt;</span><span class="keyword" data-toggle="tooltip" title="string">string</span><span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="string">string</span><span class="punctuation">&gt;</span> <span id="CSWeave.Theme.PageParams._parameters">_parameters</span><span class="punctuation">;</span>
+
+		<span class="keyword" id="CSWeave.Theme.PageParams.PageParams()" data-toggle="tooltip" title="CSWeave.Theme.PageParams.PageParams()">public</span> <span data-toggle="tooltip" title="CSWeave.Theme.PageParams.PageParams()">PageParams</span> <span class="punctuation">(</span><span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>"><a href="../CSWeave.Theme/PageParams.html#CSWeave.Theme.PageParams._parameters">_parameters</a></span> <span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>">=</span> <span class="keyword" data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>">new</span> <span class="typename">Dictionary</span><span class="punctuation">&lt;</span><span class="keyword" data-toggle="tooltip" title="string">string</span><span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="string">string</span><span class="punctuation">&gt;</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<p>The parameters are converted to lowercase before they are added to the
+dictionary. Parameter names are case-insensitive, so we need to do this
+in all the methods accessing the dictionary. If a parameter with the
+same name already exists in the dictionary, its value is updated.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="CSWeave.Theme.PageParams.Add(string, string)" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Add(string, string)">public</span> <span class="keyword" data-toggle="tooltip" title="void">void</span> <span data-toggle="tooltip" title="CSWeave.Theme.PageParams.Add(string, string)">Add</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="string">string</span> name<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> value<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span data-toggle="tooltip" title="string">name</span> <span class="punctuation" data-toggle="tooltip" title="string">=</span> <span data-toggle="tooltip" title="string">name</span><span class="punctuation" data-toggle="tooltip" title="string.ToLower()">.</span><span data-toggle="tooltip" title="string.ToLower()">ToLower</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span>
+			<span class="keyword">if</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>"><a href="../CSWeave.Theme/PageParams.html#CSWeave.Theme.PageParams._parameters">_parameters</a></span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>.ContainsKey(string)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>.ContainsKey(string)">ContainsKey</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="string">name</span><span class="punctuation">)</span><span class="punctuation">)</span>
+				<span data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>"><a href="../CSWeave.Theme/PageParams.html#CSWeave.Theme.PageParams._parameters">_parameters</a></span><span class="punctuation">[</span><span data-toggle="tooltip" title="string">name</span><span class="punctuation">]</span> <span class="punctuation" data-toggle="tooltip" title="string">=</span> <span data-toggle="tooltip" title="string">value</span><span class="punctuation">;</span>
+			<span class="keyword">else</span>
+				<span data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>"><a href="../CSWeave.Theme/PageParams.html#CSWeave.Theme.PageParams._parameters">_parameters</a></span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>.Add(string, string)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>.Add(string, string)">Add</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="string">name</span><span class="punctuation">,</span> <span data-toggle="tooltip" title="string">value</span><span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<p>Removing a parameter is also possible, although themes should not
+generally do so.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="CSWeave.Theme.PageParams.Remove(string)" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Remove(string)">public</span> <span class="keyword" data-toggle="tooltip" title="void">void</span> <span data-toggle="tooltip" title="CSWeave.Theme.PageParams.Remove(string)">Remove</span> <span class="punctuation">(</span><span class="keyword" data-toggle="tooltip" title="string">string</span> name<span class="punctuation">)</span>
+		<span class="punctuation">{</span>
+			<span data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>"><a href="../CSWeave.Theme/PageParams.html#CSWeave.Theme.PageParams._parameters">_parameters</a></span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>.Remove(string)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>.Remove(string)">Remove</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="string">name</span><span class="punctuation" data-toggle="tooltip" title="string.ToLower()">.</span><span data-toggle="tooltip" title="string.ToLower()">ToLower</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">;</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<p>Two indexer methods can be used to access the custom parameters. The
+first one takes two arguments: name and default value. If a parameter
+with a given name is not found, the default value is returned.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="CSWeave.Theme.PageParams.this[string, string]">public</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> <span class="keyword">this</span><span class="punctuation">[</span><span class="keyword" data-toggle="tooltip" title="string">string</span> name<span class="punctuation">,</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> defaultValue<span class="punctuation">]</span>
+		<span class="punctuation">{</span>
+			<span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.this[string, string].get">get</span>
+			<span class="punctuation">{</span>
+				<span class="keyword" data-toggle="tooltip" title="string">string</span> <span id="result">result</span><span class="punctuation">;</span>
+				<span class="keyword">return</span> <span data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>"><a href="../CSWeave.Theme/PageParams.html#CSWeave.Theme.PageParams._parameters">_parameters</a></span><span class="punctuation" data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>.TryGetValue(string, out string)">.</span><span data-toggle="tooltip" title="System.Collections.Generic.Dictionary<string, string>.TryGetValue(string, out string)">TryGetValue</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="string">name</span><span class="punctuation" data-toggle="tooltip" title="string.ToLower()">.</span><span data-toggle="tooltip" title="string.ToLower()">ToLower</span> <span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="keyword">out</span> <span data-toggle="tooltip" title="string">result</span><span class="punctuation">)</span> <span class="punctuation" data-toggle="tooltip" title="string">?</span>
+					<span data-toggle="tooltip" title="string">result</span> <span class="punctuation" data-toggle="tooltip" title="string">:</span> <span data-toggle="tooltip" title="string">defaultValue</span><span class="punctuation">;</span>
+			<span class="punctuation">}</span>
+		<span class="punctuation">}</span>
+</code></pre>
+<p>The second version takes just name of the parameter, and returns it back,
+if the parameter is not found.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="CSWeave.Theme.PageParams.this[string]">public</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> <span class="keyword">this</span><span class="punctuation">[</span><span class="keyword" data-toggle="tooltip" title="string">string</span> name<span class="punctuation">]</span> <span class="punctuation">=&gt;</span>
+			<span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams">this</span><span class="punctuation">[</span><span data-toggle="tooltip" title="string">name</span><span class="punctuation">,</span> <span data-toggle="tooltip" title="string">name</span><span class="punctuation">]</span><span class="punctuation">;</span>
+</code></pre>
+<h2 id="built-in-properties">Built-in Properties</h2>
+<p>The rest of the properties defined in the PageParams class are updated
+for	each generated page. These are page-level parameters which are always
+available.</p>
+<p>The Root property gives the relative path from the page location to the
+root directory of the website. For example, if the page we are generating
+resides under directory <code>source\code\</code>, then Root would contain path
+<code>..\..\</code>. Say you want to add a link to another page which resides under
+directory <code>doc\</code>. Now you can to refer to it by adding the value of	the
+Root property at the beginning of the path. The resulting path would be
+<code>..\..\doc\</code>.</p>
+<p>So, the Root property allows us to create relative links between pages
+that work regardless of where the site resides on disk.	This is
+quite handy since now the links work correctly when pages are viewed
+locally from disk as well as when they are accessed from a web server.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="CSWeave.Theme.PageParams.Root">public</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> Root <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Root.get">get</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Root.get">;</span> <span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Root.set">set</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Root.set">;</span> <span class="punctuation">}</span>
+</code></pre>
+<p>The name of the currently processed file is stored in the property
+below. The name does not include a file extension.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="CSWeave.Theme.PageParams.Filename">public</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> Filename <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Filename.get">get</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Filename.get">;</span> <span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Filename.set">set</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Filename.set">;</span> <span class="punctuation">}</span>
+</code></pre>
+<p>Perhaps the most important data passed to the theme is the contents
+of the page which is provided in the property below. The property
+contains the documentation extracted from the source file in HTML
+format. Typically the theme will just insert this in the appropriate
+place on a page.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="CSWeave.Theme.PageParams.Contents">public</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> Contents <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Contents.get">get</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Contents.get">;</span> <span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Contents.set">set</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Contents.set">;</span> <span class="punctuation">}</span>
+</code></pre>
+<h3 id="toc-related-properties">TOC Related Properties</h3>
+<p>The table of contents object is accessible through the Toc property.
+This object is always initialized, even when the user does not provide
+a TOC file. In that case the TOC is empty, and there are no sections
+in it.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="CSWeave.Theme.PageParams.Toc">public</span> <span class="typename" data-toggle="tooltip" title="CSWeave.Theme.Toc"><a href="../CSWeave.Theme/Toc.html#CSWeave.Theme.Toc">Toc</a></span> Toc <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Toc.get">get</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Toc.get">;</span> <span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Toc.set">set</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.Toc.set">;</span> <span class="punctuation">}</span>
+</code></pre>
+<p>When a TOC file is provided, and the current page can be found in it,
+then the following property contains a reference to the Section object
+we are on currently. This information can be used to highlight which
+section	in the TOC we are viewing.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="CSWeave.Theme.PageParams.CurrentSection">public</span> <span class="typename" data-toggle="tooltip" title="CSWeave.Theme.Section"><a href="../CSWeave.Theme/Toc.html#CSWeave.Theme.Section">Section</a></span> CurrentSection <span class="punctuation">{</span> <span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.CurrentSection.get">get</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.CurrentSection.get">;</span> <span class="keyword" data-toggle="tooltip" title="CSWeave.Theme.PageParams.CurrentSection.set">set</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.CurrentSection.set">;</span> <span class="punctuation">}</span>
+</code></pre>
+<p>The SectionPath helper function returns the relative path to section in
+the TOC from the current page. It is handy in generating links to TOC.</p>
+<pre class="csharp"><code class="csharp">		<span class="keyword" id="CSWeave.Theme.PageParams.SectionPath(CSWeave.Theme.Section)" data-toggle="tooltip" title="CSWeave.Theme.PageParams.SectionPath(CSWeave.Theme.Section)">public</span> <span class="keyword" data-toggle="tooltip" title="string">string</span> <span data-toggle="tooltip" title="CSWeave.Theme.PageParams.SectionPath(CSWeave.Theme.Section)">SectionPath</span> <span class="punctuation">(</span><span class="typename" data-toggle="tooltip" title="CSWeave.Theme.Section"><a href="../CSWeave.Theme/Toc.html#CSWeave.Theme.Section">Section</a></span> entry<span class="punctuation">)</span> <span class="punctuation">=&gt;</span>
+			<span data-toggle="tooltip" title="CSWeave.Theme.Section">entry</span><span class="punctuation" data-toggle="tooltip" title="string">.</span><span data-toggle="tooltip" title="string"><a href="../CSWeave.Theme/Toc.html#CSWeave.Theme.Section.File">File</a></span> <span class="punctuation" data-toggle="tooltip" title="bool">==</span> <span class="keyword">null</span> <span class="punctuation" data-toggle="tooltip" title="string">?</span> <span class="keyword">null</span> <span class="punctuation" data-toggle="tooltip" title="string">:</span>
+				<span class="typename" data-toggle="tooltip" title="System.IO.Path">Path</span><span class="punctuation" data-toggle="tooltip" title="System.IO.Path.Combine(string, string)">.</span><span data-toggle="tooltip" title="System.IO.Path.Combine(string, string)">Combine</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="string"><a href="../CSWeave.Theme/PageParams.html#CSWeave.Theme.PageParams.Root">Root</a></span><span class="punctuation">,</span> <span class="typename" data-toggle="tooltip" title="System.IO.Path">Path</span><span class="punctuation" data-toggle="tooltip" title="System.IO.Path.ChangeExtension(string, string)">.</span><span data-toggle="tooltip" title="System.IO.Path.ChangeExtension(string, string)">ChangeExtension</span> <span class="punctuation">(</span><span data-toggle="tooltip" title="CSWeave.Theme.Section">entry</span><span class="punctuation" data-toggle="tooltip" title="string">.</span><span data-toggle="tooltip" title="string"><a href="../CSWeave.Theme/Toc.html#CSWeave.Theme.Section.File">File</a></span><span class="punctuation">,</span> <span class="string" data-toggle="tooltip" title="string">&quot;html&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation" data-toggle="tooltip" title="CSWeave.Theme.PageParams.SectionPath(CSWeave.Theme.Section)">;</span>
+	<span class="punctuation">}</span>
+<span class="punctuation">}</span>
+</code></pre>
+
+				</div>
+				<ul class="pager">
+	<li class="previous"><a href="../CSWeave.Theme\Toc.html">Previous: Table of Contents Classes</a></li>
+	<li class="next"><a href="../CSWeave.Theme\Theme.html">Next: Theme Base Class</a></li>
+</ul>
+
+			</div>
+        </div>
+    </div>
+    
+    <footer class="panel-footer text-center">
+        <p>Copyright © 2017 Tommi Johtela</p>
+    </footer>
+
+
+    
+    <script src="../bootstrap/js/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../sidebar/sidebar.js"></script>
+    <script src="../syntax-highlight/syntax.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        extensions: ["jsMath2jax.js"]
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'></script>
+	<script src="../mermaid/mermaid.min.js"></script>
+	<script>mermaid.initialize({startOnLoad:true});</script>
+
+</body>
+</html>
