@@ -208,7 +208,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="FrontMatter.md" />
-    <None Include="Index.md" />
+    <None Include="index.md" />
     <None Include="Introduction.md" />
     <None Include="License.md" />
     <None Include="packages.config" />
