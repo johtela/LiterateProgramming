@@ -10,7 +10,10 @@ it also improves the quality of the produced code by forcing the author to
 present it in such way that it is understandable to the readers.
 
 This project is an attempt to make literate programming easy and fun for C#
-programmers. The full description of the project is available in: ...
+programmers. The full description of the project is available in: 
+
+[https://johtela.github.io/LiterateProgramming/](https://johtela.github.io/LiterateProgramming/)
+
 Please browse through the web site to get an idea what literate programming 
 is and how the `csweave` tool helps you practicing it.
 
