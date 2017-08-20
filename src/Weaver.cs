@@ -54,7 +54,7 @@ namespace LiterateProgramming
 		should be defined in its front matter. See [Front Matter](../FrontMatter.html) 
 		to learn how to add a front matter to a file.
 		*/
-		private const string _indexFile = "Index";
+		private const string _indexFile = "index";
 		/*
 		The other special file is the table of contents or _TOC_ for short. It is 
 		defined in [YAML](http://yaml.org/) format and it always has the same file 
@@ -253,7 +253,7 @@ namespace LiterateProgramming
 			file.Extension == _options.MarkdownExt;
 
 		protected bool IsIndexFile (SplitPath file) =>
-			file.FileNameWithoutExtension == _indexFile;
+			file.FileNameWithoutExtension.ToLower () == _indexFile;
 		/*
 		The following two helper function construct a block list from a source file or
 		Roslyn document. They are used by the subclasses.
