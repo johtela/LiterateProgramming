@@ -234,12 +234,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="docs\Images\Code.png" />
-    <Content Include="docs\Images\Diagram.png" />
-    <Content Include="docs\Images\favicon.ico" />
-    <Content Include="docs\Images\jumbotron.jpg" />
-    <Content Include="docs\Images\LPFlow.png" />
-    <Content Include="docs\Images\Navigation.png" />
+    <Content Include="docs\images\Code.png" />
+    <Content Include="docs\images\Diagram.png" />
+    <Content Include="docs\images\favicon.ico" />
+    <Content Include="docs\images\jumbotron.jpg" />
+    <Content Include="docs\images\LPFlow.png" />
+    <Content Include="docs\images\Navigation.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

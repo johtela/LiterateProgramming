@@ -63,7 +63,7 @@ namespace DefaultTheme
             
             #line default
             #line hidden
-            this.Write("Images/favicon.ico\">\r\n    ");
+            this.Write("images/favicon.ico\">\r\n    ");
             this.Write("\n");
             this.Write("\n");
             this.Write("\n");
@@ -150,7 +150,7 @@ namespace DefaultTheme
             
             #line default
             #line hidden
-            this.Write("Index.html\">");
+            this.Write("index.html\">");
             
             #line 15 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Params["projectname"]));
@@ -166,7 +166,7 @@ namespace DefaultTheme
             
             #line default
             #line hidden
-            this.Write("Index.html\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Home</a></li>\r\n        " +
+            this.Write("index.html\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Home</a></li>\r\n        " +
                     "            <li><a href=\"");
             
             #line 20 "C:\Users\tommi\Source\Repos\LiterateProgramming\Themes\DefaultTheme\_include/navbar.tt"

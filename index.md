@@ -35,13 +35,13 @@ extensions from [MathJax](https://www.mathjax.org/) formulas to
 [mermaid](https://knsv.github.io/mermaid/) diagrams. 
 :::
 :::col-md-6
-![Diagram](Images/Diagram.png){.img-responsive .center-block}
+![Diagram](images/Diagram.png){.img-responsive .center-block}
 :::
 ::::::
 
 ::::::row
 :::col-md-6
-![Diagram](Images/Code.png){.img-responsive .center-block}
+![Diagram](images/Code.png){.img-responsive .center-block}
 :::
 :::col-md-6
 ## Interactive Code Blocks
@@ -65,7 +65,7 @@ in a sidebar as well as navigation buttons that jump to the previous and next
 section.
 :::
 :::col-md-6
-![Diagram](Images/Navigation.png){.img-responsive .center-block}
+![Diagram](images/Navigation.png){.img-responsive .center-block}
 :::
 ::::::
 
