@@ -120,10 +120,15 @@ namespace CSWeave.Theme
 		public Section CurrentSection { get; set; }
 		/*
 		The SectionPath helper function returns the relative path to section in
-		the TOC from the current page. It is handy in generating links to TOC.
+		the TOC from the current page. It is handy in generating links to TOC. 
+		The method also changes the source file path to a relative URL by
+		changing the extension to "html" and replacing backslashes with
+		forward slashes.
 		*/
 		public string SectionPath (Section entry) =>
-			entry.File == null ? null :
-				Path.Combine (Root, Path.ChangeExtension (entry.File, "html"));
+			entry.File == null ? 
+				null :
+				Path.Combine (Root, Path.ChangeExtension (entry.File, "html"))
+					.Replace ('\\', '/');
 	}
 }

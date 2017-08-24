@@ -12,7 +12,7 @@
     <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>src\%2a.cs CSWeave.Theme\%2a.cs %2a.md -s LiterateProgramming.sln -o docs -f html -t -v</StartArguments>
+    <StartArguments>src\%2a.cs CSWeave.Theme\%2a.cs %2a.md -s LiterateProgramming.sln -o docs -f html -tv</StartArguments>
     <StartWorkingDirectory>..\..</StartWorkingDirectory>
   </PropertyGroup>
 </Project>
