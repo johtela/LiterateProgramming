@@ -3,8 +3,6 @@
   font-family: "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   line-height: 1.6;
-  margin: 10px;
-  padding: 2em;
 }
 .markdown a {
   color: #0645ad;
@@ -81,6 +79,8 @@
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 0.95em;
   tab-size: 4;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .markdown pre {
   white-space: pre-wrap;

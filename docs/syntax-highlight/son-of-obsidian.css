@@ -10,7 +10,8 @@
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .tooltip-inner {
   max-width: 1000px;
@@ -30,7 +31,8 @@ code.csharp {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 pre.csharp .punctuation,
 code.csharp .punctuation {

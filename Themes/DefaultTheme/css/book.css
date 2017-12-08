@@ -3,7 +3,6 @@
   font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
   font-size: 1.25em;
   line-height: 1.75em;
-  padding: 2em;
 }
 .markdown a {
   color: #0645ad;
@@ -69,6 +68,8 @@
 .markdown pre {
   font-size: 0.95em;
   tab-size: 4;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .markdown pre {
   white-space: pre-wrap;
