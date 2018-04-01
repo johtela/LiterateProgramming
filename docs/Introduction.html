@@ -263,22 +263,16 @@ essential part of his proposition.</p>
 suggests, the benefits are questionable. In fact, the whole justification of the method is
 somewhat obsolete. Compilers nowadays do not impose strict rules about the order of definitions.
 When they do, it is because the language designer has intentionally introduced modular constructs
-such as interfaces, classes, and namespaces that are used to create abstractions which help us
-better understand a program structure.</p>
-<p>The idea of modular and object-oriented programming is actually in conflict with the idea of
-literate programming. What good would it do to hide the program scopes present in most modern
-languages to write programs in arbitrary pieces, in arbitrary order? It makes sense to write and
-organize your documentation like that, but it is questionable if you should structure your code
-accordingly. There are much more powerful abstractions than macros, if your main goal is to make
-your code easier to understand and maintain.</p>
+such as interfaces, classes, and namespaces which help us organize our code into logical units
+that contain related functionality. Organizing your documentation in an order that makes sense
+to a reader is a good idea, but structuring your program accordingly does not necessarily make
+finding your way in it any easier.</p>
 <p>This does not mean that the idea of literate programming is without merit, though, quite the
 opposite. Documentation is largely overlooked nowadays and having a good quality documentation
-is seen as a secondary goal at best. This can lead to software that is hastily written and
-contains repetition, dead code, and generally poor design. Writing documentation and code
-together forces you to think about what you are trying to accomplish, and provides a different
-point of view to the problem you are solving. You have to be able to verbally describe how your
-code works. If that seems like a hard task, it is a clear signal that there is room for
-improvement.</p>
+is seen as a secondary goal at best. Writing documentation and code together forces you to think
+about what you are trying to accomplish, and provides a different point of view to the problem
+you are solving. You have to be able to verbally describe how your code works. If that seems like
+a hard task, it is a clear sign that your code needs improvement.</p>
 <p>By calling <code>csweave</code> a literate programming tool instead of a &quot;documentation generation tool&quot;
 as the Wikipedia article suggests, we are taking a standpoint that literate programming has
 evolved from its origins, and practicing it with modern programming languages requires
