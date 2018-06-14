@@ -207,7 +207,12 @@ namespace LiterateProgramming
 			return from proj in MSBuildHelpers.LoadProjectsInSolution (solution, solutionFile)
 				   from doc in proj.Documents
 				   let relPath = SplitPath.Split (_options.InputPath.BasePath, doc.FilePath)
-				   where filtRegexes.Any (re => re.IsMatch (relPath.FilePath))
+				   where filtRegexes.Any (re =>
+				   {
+					   ConsoleOut ("Matching document '{0}' with pattern '{1}'.",
+						   relPath.FilePath, re);
+					   return re.IsMatch (relPath.FilePath);
+				   })
 				   select Tuple.Create (relPath, doc);
 		}
 		/*
