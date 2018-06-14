@@ -34,6 +34,7 @@ namespace LiterateProgramming
 	using Microsoft.CodeAnalysis.MSBuild;
 	using System;
 	using System.Collections.Generic;
+	using System.IO;
 	using System.Linq;
 	using System.Text.RegularExpressions;
 
@@ -135,11 +136,13 @@ namespace LiterateProgramming
 		}
 
 		protected static string WildcardToRegex (string pattern) =>
-			"^" + Regex.Escape (pattern)
-					.Replace (@"\*\*", ".*")
-					.Replace (@"\*", "[^\\\\/]*")
-					.Replace (@"\?", ".")
-				  + "$";
+			"^" +
+			Regex.Escape (pattern.Replace (
+				Path.DirectorySeparatorChar == '\\' ? '/' : '\\', Path.DirectorySeparatorChar))
+			.Replace (@"\*\*", ".*")
+			.Replace (@"\*", "[^\\\\/]*")
+			.Replace (@"\?", ".")
+			+ "$";
 		/*
 		Now we can enumerate the input files.
 		*/
