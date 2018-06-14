@@ -61,8 +61,6 @@ namespace LiterateProgramming
 			_options = options;
 			_theme = LoadTheme ();
 			_pipeline = new MarkdownPipelineBuilder ()
-				.UseCustomContainers ()
-				.UseGenericAttributes ()
 				.UseAutoIdentifiers ()
 				.UseYamlFrontMatter ()
 				.UseMathematics ()
